@@ -1,6 +1,7 @@
 import admin_app from "@/admin-config";
 import { getStorage } from "firebase-admin/storage";
 import { getDatabase } from "firebase-admin/database";
+import { CarAccessoryModel } from "./models";
 
 // Function for getting admin database ref
 export function getFirebaseDatabaseServer() {
@@ -65,4 +66,30 @@ export async function updateDocumentServer(
   const dbRef = getFirebaseDatabaseServer().ref(`${databaseName}/${docName}`);
 
   await dbRef.update(document);
+}
+
+export async function getAllDocsFromDB(databaseName: string) {
+  const dbRef = getFirebaseDatabaseServer().ref(`${databaseName}`);
+  const data = (await dbRef.get()).val();
+
+  if (data) {
+    const parsedData = Object.values(data) as CarAccessoryModel[];
+
+    return parsedData ?? [];
+  }
+
+  return [];
+}
+
+export async function getDocByIdFromDB(databaseName: string, id: string) {
+  const dbRef = getFirebaseDatabaseServer().ref(`${databaseName}/${id}`);
+  const data = (await dbRef.get()).val();
+
+  if (data) {
+    const parseData = data as CarAccessoryModel;
+
+    return parseData ?? {};
+  }
+
+  return {};
 }

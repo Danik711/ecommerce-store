@@ -36,3 +36,15 @@ export interface UpdateAccessoryNextApiRequest extends NextApiRequest {
 export interface UpdateAccessoryResponse {
   message: string;
 }
+
+// API Response for Get All Accessories API
+export interface GetAllCarAccessories {
+  message?: string;
+  accessories?: CarAccessoryModel[];
+}
+
+// API Response for Get One Accessories API
+export interface GetOneCarAccessories {
+  message?: string;
+  accessory?: CarAccessoryModel;
+}

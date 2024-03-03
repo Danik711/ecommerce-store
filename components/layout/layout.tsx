@@ -10,7 +10,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <div className={"flex flex-col w-screen h-screen justify-between"}>
       <MainNavigation />
-      <main className={"w-full h-full"}>{children}</main>
+      <main className={"w-full"}>{children}</main>
       <Footer />
     </div>
   );

@@ -156,6 +156,24 @@ export default function Home() {
       .catch((err) => console.log(err));
   }
 
+  function getAllCarAccessories() {
+    fetch("/api/get-all-accessories", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
+  function getOneCarAccessories() {
+    fetch("/api/get-all-accessories/CM0001", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className={"self-start flex flex-col"}>
       <div>
@@ -270,6 +288,14 @@ export default function Home() {
 
         <button className={"p-4 m-4 bg-sky-500"} onClick={updateAccessory}>
           Update Accessory
+        </button>
+
+        <button className={"p-4 m-4 bg-sky-500"} onClick={getAllCarAccessories}>
+          Get All Accessories
+        </button>
+
+        <button className={"p-4 m-4 bg-sky-500"} onClick={getOneCarAccessories}>
+          Get CM0001 Accessory
         </button>
       </div>
     </div>

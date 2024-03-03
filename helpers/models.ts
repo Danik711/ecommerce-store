@@ -23,3 +23,7 @@ export interface UpdateCarAccessoryModel {
   photosToAdd: string[];
   photosToRemove: string[];
 }
+
+export type RealTimeDatabseReponse = {
+  [key: string]: CarAccessoryModel;
+};
