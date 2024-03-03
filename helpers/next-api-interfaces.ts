@@ -1,5 +1,5 @@
 import { NextApiRequest } from "next";
-import { CarAccessoryModel } from "./models";
+import { CarAccessoryModel, UpdateCarAccessoryModel } from "./models";
 
 // API Request Interface for Create Email User API
 export interface CreateEmailAuthNextApiRequest extends NextApiRequest {
@@ -24,5 +24,15 @@ export interface CreateAccessoryNextApiRequest extends NextApiRequest {
 
 // API Response for Create Accessory API
 export interface CreateAccessoryResponse {
+  message: string;
+}
+
+// API Request for Create Accessory API
+export interface UpdateAccessoryNextApiRequest extends NextApiRequest {
+  body: UpdateCarAccessoryModel;
+}
+
+// API Response for Create Accessory API
+export interface UpdateAccessoryResponse {
   message: string;
 }

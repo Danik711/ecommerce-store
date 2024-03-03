@@ -1,12 +1,12 @@
 import {
   emailSignIn,
   emailSignUp,
-  getFirebaseAuth,
+  getFirebaseAuthClient,
   userDelete,
   userSignOut,
-} from "@/helpers/firebase-util";
+} from "@/helpers/firebase-client-util";
 import { ChangeEvent, MutableRefObject, useRef } from "react";
-import { CarAccessoryModel } from "@/helpers/models";
+import { CarAccessoryModel, UpdateCarAccessoryModel } from "@/helpers/models";
 
 export default function Home() {
   const photoUrls: string[] = [];
@@ -51,7 +51,7 @@ export default function Home() {
   }
 
   function checkAuth() {
-    const auth = getFirebaseAuth();
+    const auth = getFirebaseAuthClient();
 
     console.log(auth);
     console.log(auth.currentUser);
@@ -111,6 +111,47 @@ export default function Home() {
         "Content-Type": "application/json",
       },
     })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
+  function updateAccessory() {
+    const alias = "CM0001";
+    const title = "New Title";
+    const quantity = "5";
+    const outerType = "Test";
+    const innerType = "Test";
+    const price = parseFloat("26000");
+    const description = "Test desc";
+
+    const body: UpdateCarAccessoryModel = {
+      title,
+      price,
+      quantity,
+      outerType,
+      innerType,
+      id: alias,
+      description,
+      available: true,
+      photosToAdd: photoUrls,
+      photos: [
+        "https://firebasestorage.googleapis.com/v0/b/general-adi-store.appspot.com/o/CarAccessories%2FCM0001%2Fphoto-CM0001-3.jpeg?alt=media&token=CM0001-3",
+        "https://firebasestorage.googleapis.com/v0/b/general-adi-store.appspot.com/o/CarAccessories%2FCM0001%2Fphoto-CM0001-1.jpeg?alt=media&token=CM0001-1",
+        "https://firebasestorage.googleapis.com/v0/b/general-adi-store.appspot.com/o/CarAccessories%2FCM0001%2Fphoto-CM0001-2.jpeg?alt=media&token=CM0001-2",
+      ],
+      photosToRemove: [
+        "https://firebasestorage.googleapis.com/v0/b/general-adi-store.appspot.com/o/CarAccessories%2FCM0001%2Fphoto-CM0001-3.jpeg?alt=media&token=CM0001-3",
+      ],
+    };
+
+    fetch("/api/update-accessory", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
@@ -223,8 +264,12 @@ export default function Home() {
           />
         </div>
 
-        <button className={"p-4 ml-4 bg-sky-500"} onClick={createAccessory}>
+        <button className={"p-4 m-4 bg-sky-500"} onClick={createAccessory}>
           Create Accessory
+        </button>
+
+        <button className={"p-4 m-4 bg-sky-500"} onClick={updateAccessory}>
+          Update Accessory
         </button>
       </div>
     </div>

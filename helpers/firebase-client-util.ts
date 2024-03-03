@@ -15,17 +15,17 @@ import { messages } from "./response-messages";
 import { getDatabase } from "firebase/database";
 
 // Function gets firebase functions
-export function getFirebaseAuth() {
+export function getFirebaseAuthClient() {
   return getAuth(firebase_app);
 }
 
 // Function gets firebase storage
-export function getFirebaseStorage() {
+export function getFirebaseStorageClient() {
   return getStorage(firebase_app);
 }
 
 // Function gets firebase storage
-export function getFirebaseDatabase() {
+export function getFirebaseDatabaseClient() {
   return getDatabase(firebase_app);
 }
 
@@ -54,7 +54,7 @@ export async function emailSignUp(
   displayName: string
 ) {
   // Get firebase functions
-  const auth = getFirebaseAuth();
+  const auth = getFirebaseAuthClient();
   let error: string = "";
   let response: UserCredential | null = null;
 
@@ -72,7 +72,7 @@ export async function emailSignUp(
 
 // Function that signs a user out
 export async function userSignOut() {
-  const auth = getFirebaseAuth();
+  const auth = getFirebaseAuthClient();
   let message = "";
   let didError = false;
   try {
@@ -88,7 +88,7 @@ export async function userSignOut() {
 
 // Function that signs a user in
 export async function emailSignIn(email: string, password: string) {
-  const auth = getFirebaseAuth();
+  const auth = getFirebaseAuthClient();
   let error: string = "";
   let response: UserCredential | null = null;
 
@@ -106,7 +106,7 @@ export async function userDelete() {
   let didError = false;
   let message: string = "";
 
-  const auth = getFirebaseAuth();
+  const auth = getFirebaseAuthClient();
 
   try {
     if (auth.currentUser) {
