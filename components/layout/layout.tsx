@@ -8,11 +8,11 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className={"flex flex-col w-screen h-screen justify-between"}>
+    <>
       <MainNavigation />
-      <main className={"w-full"}>{children}</main>
+      <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }
 

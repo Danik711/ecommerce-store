@@ -6,33 +6,108 @@ function Footer() {
   return (
     <footer
       className={
-        "flex flex-row w-full justify-between px-10 pt-4 pb-8 self-end"
+        "flex max-my-900:flex-col flex-row w-full justify-between px-10 pt-4 pb-8 self-end"
       }
     >
-      <div className={"flex justify-center"}>
-        <Link className={"flex items-start"} href={"/"}>
-          <Logo width={100} height={100} />
-        </Link>
-      </div>
-      <div>
-        <p className={"text-xl text-sky-500 mb-4 font-bold"}>Ссылки</p>
+      <Link className={"flex items-start"} href={"/"}>
+        <Logo
+          firstTextSize={"text-3xl text-left"}
+          secondTextSize={"text-4xl"}
+          thirdTextSize={"text-lg self-start text-left"}
+        />
+      </Link>
+      <div className={"max-my-900:mt-4"}>
+        <p className={"text-xl text-mainBlue mb-4 font-bold"}>Ссылки</p>
         <ul>
           <li className={"py-1"}>
-            <Link href={"/"}>Главная</Link>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/"}
+            >
+              Главная
+            </Link>
           </li>
           <li className={"py-1"}>
-            <Link href={"/accessories"}>Аксессуары</Link>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/accessories"}
+            >
+              Аксессуары
+            </Link>
           </li>
           <li className={"py-1"}>
-            <Link href={"/about-us"}>О нас</Link>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/about-us"}
+            >
+              О нас
+            </Link>
           </li>
           <li className={"py-1"}>
-            <Link href={"/contact-us"}>Контакты</Link>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/contact-us"}
+            >
+              Контакты
+            </Link>
           </li>
         </ul>
       </div>
-      <div>
-        <p className={"text-xl text-sky-500 mb-4 font-bold"}>Наши Контакты</p>
+      <div className={"max-my-900:mt-4"}>
+        <p className={"text-xl text-mainBlue mb-4 font-bold"}>Категории</p>
+        <ul>
+          <li className={"py-1"}>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/"}
+            >
+              Выхлопные Системы
+            </Link>
+          </li>
+          <li className={"py-1"}>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/accessories"}
+            >
+              Троссы
+            </Link>
+          </li>
+          <li className={"py-1"}>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/about-us"}
+            >
+              В салон
+            </Link>
+          </li>
+          <li className={"py-1"}>
+            <Link
+              className={
+                "lg:active:text-mainBlue hover:text-mainBlue transition-all"
+              }
+              href={"/contact-us"}
+            >
+              Чехлы
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className={"max-my-900:mt-4"}>
+        <p className={"text-xl text-mainBlue mb-4 font-bold"}>Наши Контакты</p>
         <p className={"py-1"}>
           Микрорайон Баянаул,
           <br />
@@ -41,16 +116,14 @@ function Footer() {
           г. Алматы
         </p>
 
-        <Link className={"py-1"} href={"tel:+77772353136"}>
+        <Link
+          className={
+            "lg:active:text-mainBlue hover:text-mainBlue transition-all py-1"
+          }
+          href={"tel:+77772353136"}
+        >
           Телефон: +7 777 235 3136
         </Link>
-      </div>
-
-      <div>
-        <p className={"text-xl text-sky-500 mb-4 font-bold"}>
-          Поиск Аксессуаров
-        </p>
-        <TextInput type={"text"} />
       </div>
     </footer>
   );

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -18,9 +19,32 @@ const config: Config = {
         "2": "2 2 0%",
         "3": "3 3 0%",
       },
-      colors: {
-        mainBlue: "#0185BC",
+      width: {
+        "my-inherit": "inherit",
       },
+      maxWidth: {
+        "500": "300px",
+      },
+      colors: {
+        mainBlue: "#0EA5E9",
+        disabled: "#E5E7EB",
+        categoryBackground: "#F2F3F7",
+      },
+    },
+    screens: {
+      "3xs": "280px",
+      "2xs": "300px",
+      "my-xs": "450px",
+      "my-660": "660px",
+      "my-380": "380px",
+      "my-450": "450px",
+      "my-500": "500px",
+      "my-550": "550px",
+      "my-350": "350px",
+      "my-900": "900px",
+      "my-1400": "1400px",
+      "header-width": "408px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [],
