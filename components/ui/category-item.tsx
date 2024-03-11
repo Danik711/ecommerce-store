@@ -18,7 +18,7 @@ export default function CategoryItem({
       {/* max-my-380:h-60 max-my-660:h-32 max-lg:h-40 */}
       <div
         className={
-          "relative w-full max-my-350:h-52 max-my-500:h-40 h-52 bg-categoryBackground"
+          "relative w-full max-my-350:h-52 my-550:h-48 my-500:h-40 lg:h-60 h-40 bg-categoryBackground"
         }
       >
         <Image fill src={imagePath} alt={"Image of a category"} />

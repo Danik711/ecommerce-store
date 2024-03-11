@@ -15,11 +15,11 @@ export default function CategoryCarousel() {
       items: 5,
     },
     tablet: {
-      breakpoint: { max: 1300, min: 850 },
+      breakpoint: { max: 1300, min: 780 },
       items: 4,
     },
     mobile: {
-      breakpoint: { max: 850, min: 650 },
+      breakpoint: { max: 780, min: 650 },
       items: 3,
     },
     mobile1: {

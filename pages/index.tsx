@@ -6,16 +6,16 @@ import CategoryCarousel from "@/components/ui/category-carousel";
 
 export default function Home() {
   return (
-    <div className={"flex flex-col"}>
+    <div className={"flex flex-col max-lg:mt-20"}>
       <div
         className={
-          "flex lg:mt-0 xl:h-[600px] lg:h-[500px] md:h-[400px] h-[300px] max-my-xs:h-[200px] relative"
+          "flex xl:h-[600px] lg:h-[500px] md:h-[400px] h-[300px] max-my-xs:h-[200px] relative"
         }
       >
         <Image fill alt={"Image of a car"} src={"/images/car-slider-1.jpg"} />
         <div
           className={
-            "flex flex-col absolute max-my-xs:top-0 max-md:top-8 lg:top-32 top-24 max-my-xs:ml-5 ml-10"
+            "flex flex-col absolute max-my-xs:top-0 max-md:top-8 lg:top-32 top-20 max-my-xs:ml-5 ml-10"
           }
         >
           <p
