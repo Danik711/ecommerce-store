@@ -120,7 +120,7 @@ function Footer() {
           className={
             "lg:active:text-mainBlue hover:text-mainBlue transition-all py-1"
           }
-          href={"tel:+77772353136"}
+          href={"https://wa.me/77772353136"}
         >
           Телефон: +7 777 235 3136
         </Link>

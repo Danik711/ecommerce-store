@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "2gis-maps": "^3.7.3",
     "firebase": "^10.8.0",
     "firebase-admin": "^12.0.0",
     "next": "14.1.0",

@@ -181,6 +181,7 @@ function MainNavigation() {
                   "lg:active:text-mainBlue hover:text-mainBlue transition-all font-bold"
                 }
                 href={"/"}
+                onClick={triggerSlidingMenu}
               >
                 Главная
               </Link>
@@ -191,6 +192,7 @@ function MainNavigation() {
                   "lg:active:text-mainBlue hover:text-mainBlue transition-all font-bold"
                 }
                 href={"/accessories"}
+                onClick={triggerSlidingMenu}
               >
                 Аксессуары
               </Link>
@@ -201,6 +203,7 @@ function MainNavigation() {
                   "lg:active:text-mainBlue hover:text-mainBlue transition-all font-bold"
                 }
                 href={"/about-us"}
+                onClick={triggerSlidingMenu}
               >
                 О нас
               </Link>
@@ -211,6 +214,7 @@ function MainNavigation() {
                   "lg:active:text-mainBlue hover:text-mainBlue transition-all font-bold"
                 }
                 href={"/contact-us"}
+                onClick={triggerSlidingMenu}
               >
                 Контакты
               </Link>
